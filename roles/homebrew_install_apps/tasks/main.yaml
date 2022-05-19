@@ -10,45 +10,13 @@
 - name: "Install homebrew packages"
   community.general.homebrew:
     name:
-    - aws-iam-authenticator
-    - awscli
-    - azure-cli
-    - docker
-    - docker-compose
-    - go
-    - htop
-    - kubernetes-cli
-    - nvm
-    - telnet
-    - terraform
-    - zsh
+    - '{{ item }}'
     state: present
     update_homebrew: yes
+  loop: '{{ homebrew_packages }}'
 
 - name: 'Install core packages via brew casks'
   community.general.homebrew_cask:
     name: "{{ item }}"
   ignore_errors: true
-  with_items:
-  - appcleaner
-  - bitwarden
-  - brave-browser
-  - chrome-remote-desktop-host
-  - discord
-  - firefox
-  - google-chrome
-  - iterm2
-  - ledger-live
-  - nordvpn
-  - notion
-  - postman
-  - robo-3t
-  - sourcetree
-  - tableplus
-  - telegram
-  - virtualbox
-  - visual-studio-code
-  - vlc
-  - wechat
-  - whatsapp
-  - zoom
+  loop: '{{ homebrew_cask }}'
