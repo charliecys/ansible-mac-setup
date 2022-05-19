@@ -1,7 +1,7 @@
 ---
 - name: "Create a default p10k configuration"
   template:
-    src: templates/.p10k.zsh.j2
+    src: .p10k.zsh.j2
     dest: /Users/{{ lookup('env', 'USER') }}/.p10k.zsh
     owner: "{{ lookup('env', 'USER') }}"
     force: yes
