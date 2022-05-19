@@ -5,3 +5,11 @@
     dest: /Users/{{ lookup('env', 'USER') }}/Library/Application Support/Code/User/settings.json
     owner: "{{ lookup('env', 'USER') }}"
     force: yes
+
+- name: install extensions
+  shell: code --install-extension {{ item }}
+  with_items:
+  - golang.go
+  - hashicorp.terraform
+  - eriklynd.json-tools
+  - redhat.ansible
