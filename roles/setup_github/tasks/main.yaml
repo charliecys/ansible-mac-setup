@@ -1,0 +1,7 @@
+---
+- name: "Create a default .gitconfig file"
+  template:
+    src: templates/.gitconfig.j2
+    dest: "/Users/{{ lookup('env', 'USER') }}/.gitconfig"
+    owner: "{{ lookup('env', 'USER') }}"
+    force: yes

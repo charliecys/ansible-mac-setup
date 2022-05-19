@@ -1,0 +1,13 @@
+[user]
+        email = {{ github_username }}@users.noreply.github.com
+        name = {{ github_username }}
+[url "git@github.com:"]
+        insteadOf = https://github.com/
+[core]
+        excludesfile = /Users/{{ lookup('env', 'USER') }}/.gitignore_global
+[difftool "sourcetree"]
+        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+        path =
+[mergetool "sourcetree"]
+        cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+        trustExitCode = true
