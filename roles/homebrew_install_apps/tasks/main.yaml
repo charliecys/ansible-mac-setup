@@ -28,9 +28,10 @@
 - name: 'Install core packages via brew casks'
   community.general.homebrew_cask:
     name: "{{ item }}"
-  ignore_errors: yes
+  ignore_errors: true
   with_items:
   - appcleaner
+  - bitwarden
   - brave-browser
   - chrome-remote-desktop-host
   - discord
@@ -50,3 +51,4 @@
   - vlc
   - wechat
   - whatsapp
+  - zoom
