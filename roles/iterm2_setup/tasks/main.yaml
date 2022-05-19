@@ -1,0 +1,3 @@
+---
+- include: zsh.yaml
+- include: p10k.yaml
