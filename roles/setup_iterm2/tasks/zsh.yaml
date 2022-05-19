@@ -1,3 +1,4 @@
+---
 - name: Get the path to ZSH
   become: false
   local_action: command which zsh
