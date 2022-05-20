@@ -1,7 +1,14 @@
 ---
+# https://github.com/romkatv/powerlevel10k/blob/master/README.md#manual-font-installation
+- name: 'download p10k fonts'
+  get_url:
+    url: '{{ item.url }}'
+    dest: /Library/Fonts/{{ item.filename }}
+  loop: '{{ p10k_fonts }}'
+
 - name: "Create a default p10k configuration"
-  template:
-    src: .p10k.zsh.j2
+  copy:
+    src: "{{ role_path }}/templates/.p10k.zsh"
     dest: /Users/{{ lookup('env', 'USER') }}/.p10k.zsh
     owner: "{{ lookup('env', 'USER') }}"
     force: yes

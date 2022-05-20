@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ANSIBLE_VERSION=5.8.0
+ANSIBLE_VERSION=5
 
 
 function install_brew {
