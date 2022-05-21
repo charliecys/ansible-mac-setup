@@ -14,5 +14,8 @@ cd prereqs
 ## Install applications via ansible
 ```
 cd ..
-install_apps.sh
+ansible-playbook install_apps.yaml --ask-become-pass
+ansible-playbook setup_github.yaml --ask-become-pass
+ansible-playbook setup_iterm2.yaml --ask-become-pass
+ansible-playbook setup_vscode.yaml --ask-become-pass
 ```

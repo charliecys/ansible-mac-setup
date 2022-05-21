@@ -1,22 +1,22 @@
 ---
-- name: 'Make sure homebrew bin is in path'
+- name: "Make sure homebrew bin is in path"
   ansible.builtin.lineinfile:
     path: /etc/paths
     state: present
-    line: '/opt/homebrew/bin'
+    line: "/opt/homebrew/bin"
   become: true
   become_user: root
 
 - name: "Install homebrew packages"
   community.general.homebrew:
     name:
-    - '{{ item }}'
+    - "{{ item }}"
     state: present
     update_homebrew: yes
-  loop: '{{ homebrew_packages }}'
+  loop: "{{ homebrew_packages }}"
 
-- name: 'Install core packages via brew casks'
+- name: "Install core packages via brew casks"
   community.general.homebrew_cask:
     name: "{{ item }}"
   ignore_errors: true
-  loop: '{{ homebrew_cask }}'
+  loop: "{{ homebrew_cask }}"

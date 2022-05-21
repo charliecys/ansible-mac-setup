@@ -1,23 +1,23 @@
 ---
-- name: 'check if font exist'
+- name: "check if font exist"
   stat:
-    path: '/Library/Fonts/{{ item.filename }}'
+    path: "/Library/Fonts/{{ item.filename }}"
   register: stat_results
-  loop: '{{ p10k_fonts }}'
+  loop: "{{ p10k_fonts }}"
   ignore_errors: True
 
 # https://github.com/romkatv/powerlevel10k/blob/master/README.md#manual-font-installation
-# download fonts if they don't exist
-- name: 'download p10k fonts'
+# download fonts if they don"t exist
+- name: "download p10k fonts"
   get_url:
-    url: '{{ item.url }}'
-    dest: '/Library/Fonts/{{ item.filename }}'
-  loop: '{{ stat_results.results }}'
+    url: "{{ item.url }}"
+    dest: "/Library/Fonts/{{ item.filename }}"
+  loop: "{{ stat_results.results }}"
   when: item.stat.exists == False
 
-- name: 'Create a default p10k configuration'
+- name: "Create a default p10k configuration"
   copy:
-    src: '{{ role_path }}/templates/.p10k.zsh'
-    dest: '/Users/{{ lookup("env", "USER") }}/.p10k.zsh'
-    owner: '{{ lookup("env", "USER") }}'
+    src: "{{ role_path }}/templates/.p10k.zsh"
+    dest: "/Users/{{ lookup('env', 'USER') }}/.p10k.zsh"
+    owner: "{{ lookup('env', 'USER') }}"
     force: yes
