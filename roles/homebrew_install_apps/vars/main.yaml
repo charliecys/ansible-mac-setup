@@ -2,7 +2,6 @@ homebrew_packages:
 - aws-iam-authenticator
 - awscli
 - azure-cli
-- docker
 - docker-compose
 - go
 - htop
@@ -28,6 +27,7 @@ homebrew_cask:
 - postman
 - robo-3t
 - sourcetree
+- spotify
 - tableplus
 - telegram
 - virtualbox

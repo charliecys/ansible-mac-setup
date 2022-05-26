@@ -1,0 +1,20 @@
+---
+- name: "check if docker installer exist"
+  stat:
+    path: "~/Downloads/Docker.dmg"
+  register: docker_download_status
+  ignore_errors: True
+
+- name: "download docker"
+  get_url:
+    url: https://desktop.docker.com/mac/main/amd64/Docker.dmg
+    dest: "/Users/{{ lookup('env', 'USER') }}/Downloads/Docker.dmg"
+  when: "docker_download_status.stat.exists == False"
+
+- name: "install docker"
+  command: "{{ item }}"
+  loop:
+  - "hdiutil attach /Users/{{ lookup('env', 'USER') }}/Downloads/Docker.dmg"
+  - "/Volumes/Docker/Docker.app/Contents/MacOS/install --accept-license"
+  - "hdiutil detach /Volumes/Docker"
+  become: True

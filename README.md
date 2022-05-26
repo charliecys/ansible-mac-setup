@@ -15,6 +15,7 @@ cd prereqs
 ```
 cd ..
 ansible-playbook install_apps.yaml --ask-become-pass
+ansible-playbook install_docker.yaml --ask-become-pass
 ansible-playbook setup_github.yaml --ask-become-pass
 ansible-playbook setup_iterm2.yaml --ask-become-pass
 ansible-playbook setup_vscode.yaml --ask-become-pass
