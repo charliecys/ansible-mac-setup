@@ -2,8 +2,8 @@ homebrew_packages:
 - aws-iam-authenticator
 - awscli
 - azure-cli
-- docker-compose
 - go
+- graphviz
 - htop
 - kubernetes-cli
 - nvm
@@ -21,6 +21,7 @@ homebrew_cask:
 - firefox
 - google-chrome
 - iterm2
+- keybase
 - ledger-live
 - nordvpn
 - notion
