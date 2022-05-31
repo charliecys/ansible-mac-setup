@@ -1,0 +1,6 @@
+- name: "Create a default vim configuration"
+  copy:
+    src: "{{ role_path }}/templates/.vimrc"
+    dest: "/Users/{{ lookup('env', 'USER') }}/.vimrc"
+    owner: "{{ lookup('env', 'USER') }}"
+    force: yes

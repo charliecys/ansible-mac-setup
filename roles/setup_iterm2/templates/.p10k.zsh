@@ -1176,7 +1176,7 @@
 
   ################[ terraform: terraform workspace (https://www.terraform.io) ]#################
   # Don't show terraform workspace if it's literally "default".
-  typeset -g POWERLEVEL9K_TERRAFORM_SHOW_DEFAULT=false
+  typeset -g POWERLEVEL9K_TERRAFORM_SHOW_DEFAULT=true
   # POWERLEVEL9K_TERRAFORM_CLASSES is an array with even number of elements. The first element
   # in each pair defines a pattern against which the current terraform workspace gets matched.
   # More specifically, it's P9K_CONTENT prior to the application of context expansion (see below)
