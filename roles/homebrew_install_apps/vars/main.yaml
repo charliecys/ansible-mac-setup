@@ -1,4 +1,5 @@
 homebrew_packages:
+- argocd
 - aws-iam-authenticator
 - awscli
 - azure-cli
