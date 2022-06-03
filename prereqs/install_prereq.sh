@@ -4,7 +4,7 @@ ANSIBLE_VERSION=5
 
 
 function install_brew {
-  if [ -z $(which ansible) ]
+  if [ -z $(which brew) ]
     then
     echo "============================="
     echo "====== Installing Brew ======"
@@ -16,6 +16,8 @@ function install_brew {
   fi
 }
 install_brew
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 function install_ansible {
   if [ -z $(which ansible) ]
