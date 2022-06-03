@@ -7,3 +7,6 @@ p10k_fonts:
   filename: MesloLGS NF Italic.ttf
 - url: https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
   filename: MesloLGS NF Bold Italic.ttf
+p10k_path:
+  x86_64: source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+  arm64: source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme

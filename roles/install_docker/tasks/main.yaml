@@ -5,11 +5,17 @@
   register: docker_download_status
   ignore_errors: True
 
-- name: "download docker"
+- name: "download docker for mac intel"
   get_url:
-    url: https://desktop.docker.com/mac/main/amd64/Docker.dmg
+    url: "{{ url.x86_64 }}"
     dest: "/Users/{{ lookup('env', 'USER') }}/Downloads/Docker.dmg"
-  when: "docker_download_status.stat.exists == False"
+  when: docker_download_status.stat.exists == False and ansible_machine == "x86_64"
+
+- name: "download docker for mac m1"
+  get_url:
+    url: "{{ url.arm64 }}"
+    dest: "/Users/{{ lookup('env', 'USER') }}/Downloads/Docker.dmg"
+  when: docker_download_status.stat.exists == False and ansible_machine == "arm64"
 
 - name: "install docker"
   command: "{{ item }}"

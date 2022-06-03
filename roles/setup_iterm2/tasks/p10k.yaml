@@ -21,3 +21,17 @@
     dest: "/Users/{{ lookup('env', 'USER') }}/.p10k.zsh"
     owner: "{{ lookup('env', 'USER') }}"
     force: yes
+
+- name: add source p10k for mac intel
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    line: "{{ p10k_path.x86_64 }}"
+    state: present
+  when: ansible_machine == "x86_64"
+
+- name: add source p10k for mac m1
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    line: "{{ p10k_path.arm64 }}"
+    state: present
+  when: ansible_machine == "arm64"

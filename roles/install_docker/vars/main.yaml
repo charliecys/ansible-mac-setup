@@ -1,0 +1,3 @@
+url:
+  x86_64: https://desktop.docker.com/mac/main/amd64/Docker.dmg
+  arm64: https://desktop.docker.com/mac/main/arm64/Docker.dmg
