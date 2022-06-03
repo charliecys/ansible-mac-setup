@@ -12,6 +12,7 @@ homebrew_packages:
 - romkatv/powerlevel10k/powerlevel10k
 - telnet
 - terraform
+- wget
 - zsh
 
 homebrew_cask:
