@@ -10,8 +10,8 @@
 # download fonts if they don"t exist
 - name: "download p10k fonts"
   get_url:
-    url: "{{ item.url }}"
-    dest: "/Library/Fonts/{{ item.filename }}"
+    url: "{{ item.item.url }}"
+    dest: "/Library/Fonts/{{ item.item.filename }}"
   loop: "{{ stat_results.results }}"
   when: item.stat.exists == False
 
