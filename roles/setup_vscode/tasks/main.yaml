@@ -13,3 +13,4 @@
   - hashicorp.terraform
   - eriklynd.json-tools
   - redhat.ansible
+  - ahebrank.yaml2json
