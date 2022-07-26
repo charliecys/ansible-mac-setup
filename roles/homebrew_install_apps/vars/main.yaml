@@ -8,6 +8,7 @@ homebrew_packages:
 - helm
 - htop
 - jq
+- kind
 - kubernetes-cli
 - nvm
 - romkatv/powerlevel10k/powerlevel10k
@@ -27,6 +28,7 @@ homebrew_cask:
 - iterm2
 - keybase
 - ledger-live
+- lens
 - nordvpn
 - notion
 - postman
