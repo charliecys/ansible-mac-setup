@@ -1,4 +1,4 @@
 ---
 - include: zsh.yaml
-- include: p10k.yaml
+# - include: p10k.yaml
 - include: vim.yaml
